@@ -11,17 +11,37 @@ cep varchar(50),
 bairro varchar(100),
 numero int
 );
+insert into clientes
+values ('01', 'Criadouro ribeirinho', '12345678901', 'ribereirinho@gmail.com', '12345678901234', '023133023', 'Jardim goiabada', '92'),
+('02', 'Tilapia feliz', '21098765432', 'tilapinha@hotmail.com', '43210987654321', '02312033', 'Rua jurandir', '100');
 
 
 create table sensor (
 idsensor int,
 tanquePeixe varchar(10));
 
+insert into sensor 
+values (01, 'A'),
+(01, 'B'),
+('02', 'A'),
+('02', 'B');
+
 create table registro (
 idregistro int,
-tanquePeixe varchar(10),
+sensor varchar(10),
 alerta varchar(15) check(alerta='critico' or alerta='alerta' or alerta='estavel'), 
 temperatura varchar(10),
 data_hora datetime);
 
+insert into registro
+values ('01', '1', 'critico', '31', '2022-09-01 9:20:00'),
+('02', '02', 'alerta', '28', '2022-08-29 11:00:02'),
+('03', '03', 'estavel', '25', '2022-01-02 8:00:00'),
+('04', '04', 'estavel', '24', '2022-03-04 13:20:18');
 
+
+select * from clientes;
+
+select * from sensor;
+
+select * from registro;
