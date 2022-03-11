@@ -24,6 +24,11 @@ insert into cliente(nome_empresa, cnpj, cep, estado, cidade, bairro, rua, numero
     ('Tilapia alegria','43210987654321', '07898765', 'PR', 'valinhos', 'Presidente vargas', 
     'Rua jurandir', '10', '210987654321', 'tilapiaalegria@hotmail.com','tilapinha321');
 
+select * from cliente;
+select nome_empresa from cliente;
+select * from cliente where estado = 'GO';
+select * from cliente where nome_empresa like '%a';
+
 create table sensor (
 	idSensor int primary key auto_increment,
     empresa_pertencente int,
@@ -36,6 +41,8 @@ insert into sensor(empresa_pertencente, tanque_localizado) values
     ('2', 'A'),
     ('2', 'B'),
     ('2', 'C');
+
+
 
 create table registro (
 	idRegistro int primary key auto_increment,
@@ -51,4 +58,26 @@ insert into registro(temperatura, alerta, data_hora_registro, sensor_responsavel
     (28.3,'estavel', '2022-03-14 12:45:10', 3),
     (27.4,'estavel', '2022-03-15 12:50:40', 4),
     (30.1,'critico', '2022-03-16 12:55:15', 5);
-    
+
+-- selects 
+-- Clientes
+select * from cliente;
+select nome_empresa from cliente;
+select * from cliente where estado = 'GO';
+select * from cliente where nome_empresa like '%a';
+select nome_empresa, cnpj, cep from cliente;
+select email, senha from cliente;
+
+-- Sensor
+select * from sensor;
+select empresa_pertencente from sensor;
+select tanque_localizado from sensor;
+select * from sensor where IdSensor = 1;
+
+-- Registro
+select * from registro;
+select temperatura from registro;
+select * from registro where alerta = 'estavel';
+select * from registro where alerta = 'alerta';
+select * from registro where alerta = 'critico';
+select data_hora_registro from registro;
