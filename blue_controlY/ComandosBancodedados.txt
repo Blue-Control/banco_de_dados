@@ -6,10 +6,11 @@ idcliente int,
 nome varchar(255),
 telefone varchar(11),
 email varchar(255),
-cpf varchar(15),
-estado varchar(50),
+cnpj varchar(15),
+cep varchar(50),
 bairro varchar(100),
-endereco varchar(255));
+numero int
+);
 
 
 create table sensor (
@@ -19,6 +20,7 @@ tanquePeixe varchar(10));
 create table registro (
 idregistro int,
 tanquePeixe varchar(10),
+alerta varchar(15) check(alerta='critico' or alerta='alerta' or alerta='estavel'), 
 temperatura varchar(10),
 data_hora datetime);
 
